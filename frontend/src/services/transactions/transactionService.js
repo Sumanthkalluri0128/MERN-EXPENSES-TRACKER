@@ -4,11 +4,20 @@ import axios from "axios";
 
 const token = getUserFromStorage();
 //!Login
-export const addCategoryAPI = async ({ name, type }) => {
+export const addTransactionAPI = async ({
+  category,
+  date,
+  description,
+  amount,
+  type,
+}) => {
   const response = await axios.post(
-    `${BASE_URL}/categories/add`,
+    `${BASE_URL}/transactions/add`,
     {
-      name,
+      category,
+      date,
+      description,
+      amount,
       type,
     },
     {
@@ -21,8 +30,14 @@ export const addCategoryAPI = async ({ name, type }) => {
   return response.data;
 };
 
-export const listCategoriesAPI = async ({ email, password }) => {
-  const response = await axios.get(`${BASE_URL}/categories/lists`, {
+export const listTransactionAPI = async ({
+  category,
+  type,
+  startDate,
+  endDate,
+}) => {
+  const response = await axios.get(`${BASE_URL}/transactions/lists`, {
+    params: { category, type, startDate, endDate },
     headers: {
       Authorization: `Bearer ${token}`,
     },

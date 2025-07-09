@@ -36,7 +36,7 @@ const AddCategory = () => {
     onSubmit: (values) => {
       mutateAsync(values)
         .then((data) => {
-          console.log(data);
+          navigate("/categories");
         })
         .catch((e) => console.log(e));
     },

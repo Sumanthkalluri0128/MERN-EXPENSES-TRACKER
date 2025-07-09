@@ -2,7 +2,7 @@ import React from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { useQuery } from "@tanstack/react-query";
 
-const TransactionList = () => {
+const TransactionList1 = () => {
   return (
     <div className="mt-6">
       <h3 className="text-xl font-semibold mb-2">Transactions</h3>
@@ -65,4 +65,4 @@ const TransactionList = () => {
   );
 };
 
-export default TransactionList;
+export default TransactionList1;
